@@ -1,5 +1,3 @@
-import { setTimeout } from 'node:timers/promises'
-
 import { z } from 'zod'
 
 import data from '../data.json'
@@ -8,8 +6,6 @@ export async function GET(
   request: Request,
   context: { params: { slug: string } },
 ) {
-  await setTimeout(1000)
-
   const { params } = context
   const slug = z.string().parse(params.slug)
 
